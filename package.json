@@ -1,0 +1,93 @@
+{
+  "name": "adonis-rabbitmq",
+  "version": "0.0.0",
+  "description": "Adonis RabbitMQ Provider",
+  "main": "build/providers/RabbitProvider.js",
+  "files": [
+    "build/adonis-typings",
+    "build/providers",
+    "build/templates",
+    "build/src",
+    "build/standalone.js",
+    "build/standalone.d.ts"
+  ],
+  "scripts": {
+    "lint": "eslint . --ext=.ts",
+    "test": "npx ts-node japafile.ts",
+    "prepublishOnly": "npm run build",
+    "build": "npm run compile",
+    "compile": "npm run lint && npm run clean && tsc && npm run copy:files",
+    "copy:files": "copyfiles \"templates/**/*.txt\" build && npm run copy:instructions_md",
+    "copy:instructions_md": "copyfiles \"README.md\" build",
+    "pretest": "npm run lint",
+    "mrm": "mrm --preset=@adonisjs/mrm-preset",
+    "clean": "del build",
+    "sync-labels": "github-label-sync --labels ./node_modules/@adonisjs/mrm-preset/gh-labels.json emmadedayo/adonis-rabbitmq"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/emmadedayo/adonis-rabbitmq.git"
+  },
+  "keywords": [
+    "rabbitmq",
+    "adonisjsv5"
+  ],
+  "author": "Adenagbe Emmanuel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/emmadedayo/adonis-rabbitmq/issues"
+  },
+  "homepage": "https://github.com/emmadedayo/adonis-rabbitmq#readme",
+  "devDependencies": {
+    "@adonisjs/core": "^5.1.8",
+    "@adonisjs/mrm-preset": "^5.0.3",
+    "@japa/assert": "^3.0.0",
+    "@japa/runner": "^3.1.2",
+    "adonis-preset-ts": "^1.0.4",
+    "copyfiles": "^2.4.0",
+    "eslint": "^8.5.0",
+    "eslint-plugin-adonis": "^2.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "github-label-sync": "^2.3.1",
+    "mrm": "^4.1.22",
+    "np": "^7.5.0",
+    "prettier": "^2.3.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.5"
+  },
+  "mrmConfig": {
+    "core": false,
+    "license": "MIT",
+    "services": [],
+    "minNodeVersion": "16.13.1",
+    "probotApps": []
+  },
+  "dependencies": {
+    "@types/amqplib": "^0.10.5",
+    "amqplib": "^0.10.3",
+    "del-cli": "^5.1.0",
+    "fast-safe-stringify": "^2.1.1"
+  },
+  "adonisjs": {
+    "templates": {
+      "config": {
+        "src": "rabbit.txt",
+        "dest": "rabbit"
+      }
+    },
+    "env": {
+      "RABBIT_CONNECTION": "localhost"
+    },
+    "types": "@emmadedayo/adonis-rabbitmq",
+    "providers": [
+      "@emmadedayo/adonis-rabbitmq"
+    ]
+  },
+  "np": {
+    "message": "Releases v%s",
+    "anyBranch": false
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

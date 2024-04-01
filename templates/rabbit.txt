@@ -1,0 +1,12 @@
+import Env from '@ioc:Adonis/Core/Env';
+import { RabbitConfig } from '@ioc:Adonis/Addons/Rabbit';
+
+// Assuming RABBIT_CONNECTION holds the entire connection string
+// For example: amqps://user:password@hostname:port/vhost
+const rabbitConfig: RabbitConfig = {
+  url: Env.get('RABBIT_CONNECTION', 'amqp://localhost') as string,
+  // Add options here if needed, or leave as undefined if not
+  options: undefined, // You can specify connection options here if necessary
+};
+
+export default rabbitConfig;
