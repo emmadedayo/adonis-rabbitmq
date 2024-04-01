@@ -1,6 +1,6 @@
 {
   "name": "adonis-queuemq",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Adonis RabbitMQ Provider",
   "files": [
     "build/adonis-typings",
@@ -79,9 +79,9 @@
     "env": {
       "RABBIT_CONNECTION": "localhost"
     },
-    "types": "@emmadedayo/adonis-queuemq",
+    "types": "adonis-queuemq",
     "providers": [
-      "@emmadedayo/adonis-queuemq"
+      "adonis-queuemq"
     ]
   },
   "np": {
