@@ -6,7 +6,7 @@
     "node_modules",
     "build"
   ],
-  "extends": "./node_modules/@adonisjs/mrm-preset/_tsconfig",
+  "extends": "./node_modules/adonis-preset-ts/tsconfig",
   "compilerOptions": {
     "outDir": "build",
     "rootDir": "./",
