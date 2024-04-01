@@ -1,8 +1,7 @@
 {
-  "name": "adonis-rabbitmq",
-  "version": "0.0.0",
+  "name": "adonis-queuemq",
+  "version": "0.0.1",
   "description": "Adonis RabbitMQ Provider",
-  "main": "build/providers/RabbitProvider.js",
   "files": [
     "build/adonis-typings",
     "build/providers",
@@ -20,9 +19,10 @@
     "copy:files": "copyfiles \"templates/**/*.txt\" build && npm run copy:instructions_md",
     "copy:instructions_md": "copyfiles \"README.md\" build",
     "pretest": "npm run lint",
+    "commit": "git-cz",
     "mrm": "mrm --preset=@adonisjs/mrm-preset",
     "clean": "del build",
-    "sync-labels": "github-label-sync --labels ./node_modules/@adonisjs/mrm-preset/gh-labels.json emmadedayo/adonis-rabbitmq"
+    "sync-labels": "github-label-sync --labels ./node_modules/@adonisjs/mrm-preset/gh-labels.json emmadedayo/adonis-queuemq"
   },
   "repository": {
     "type": "git",
@@ -66,7 +66,8 @@
     "@types/amqplib": "^0.10.5",
     "amqplib": "^0.10.3",
     "del-cli": "^5.1.0",
-    "fast-safe-stringify": "^2.1.1"
+    "fast-safe-stringify": "^2.1.1",
+    "git-cz": "^4.9.0"
   },
   "adonisjs": {
     "templates": {
@@ -78,9 +79,9 @@
     "env": {
       "RABBIT_CONNECTION": "localhost"
     },
-    "types": "@emmadedayo/adonis-rabbitmq",
+    "types": "@emmadedayo/adonis-queuemq",
     "providers": [
-      "@emmadedayo/adonis-rabbitmq"
+      "@emmadedayo/adonis-queuemq"
     ]
   },
   "np": {
